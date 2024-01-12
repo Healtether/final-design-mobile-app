@@ -1,3 +1,4 @@
+import 'package:finalhealtether/screens/Home/Screens/UserProfile/settings_page.dart';
 import 'package:finalhealtether/screens/Home/Screens/Widgets/profile_menu_containers.dart';
 import 'package:finalhealtether/screens/Home/Screens/HomeScreen/appointment_analysis.dart';
 import 'package:finalhealtether/screens/Home/Screens/HomeScreen/feedback_page.dart';
@@ -32,6 +33,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 24.0),
                     child: CircleAvatar(
+                      backgroundColor: Colors.white,
                       radius: 45,
                     ),
                   ),
@@ -233,7 +235,12 @@ class _DrawerMenuState extends State<DrawerMenu> {
             height: 5,
           ),
           GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return SettingsPage();
+                }));
+              },
               child: ProfileMenuCont(
                 text: 'Settings',
               )),
